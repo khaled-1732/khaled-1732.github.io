@@ -120,6 +120,50 @@
             margin-bottom: 1.5rem;
         }
 
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input,
+        form select,
+        form button {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        form input:hover,
+        form select:hover {
+            border-color: #00695C;
+            background-color: #f1f1f1;
+        }
+
+        form button {
+            background: #004D40;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        form button:hover {
+            background: #00695C;
+        }
+
         /* Footer Section */
         footer {
             background: #004D40; /* Dark green matching the logo */
@@ -162,19 +206,26 @@
     <section>
         <h2>Book Your Laundry Services</h2>
         <p>Fill out the form below to book your laundry services. We’ll take care of the rest!</p>
-        <form action="#" method="POST">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-            <label for="email">Your Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-            <label for="service">Select Service:</label><br>
+        <form action="backend_booking_handler" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Your Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="service">Select Service:</label>
             <select id="service" name="service" required>
                 <option value="laundry">Laundry</option>
                 <option value="drycleaning">Dry Cleaning</option>
                 <option value="ironing">Ironing</option>
-            </select><br><br>
-            <label for="date">Preferred Date:</label><br>
-            <input type="date" id="date" name="date" required><br><br>
+            </select>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
             <button type="submit">Submit Booking</button>
         </form>
     </section>
