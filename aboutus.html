@@ -54,22 +54,54 @@
         /* Navigation Menu */
         nav {
             background: #00796B; /* Teal matching the logo */
-            padding: 1rem 0;
+            padding: 1rem;
             text-align: center;
+            position: relative;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
+        nav .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        nav .dropdown button {
             background: #004D40; /* Dark green matching the logo */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        nav a:hover {
-            background: #00695C; /* Slightly lighter teal for hover */
+        nav .dropdown button:hover {
+            background: #00695C; /* Lighter green for hover */
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        nav .dropdown-content a {
+            color: #004D40; /* Dark green matching the logo */
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        nav .dropdown-content a:hover {
+            background: #f1f1f1;
+        }
+
+        nav .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Section Styles */
@@ -115,15 +147,15 @@
 
     <!-- Navigation Menu -->
     <nav>
-        <ul>
-            <li>
+        <div class="dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
                 <a href="index.html">Home</a>
                 <a href="aboutus.html">About Us</a>
                 <a href="bookings.html">Bookings</a>
-                <a href="prices.html">Prices</a> 
-            </li>
-        </ul>
-        
+                <a href="prices.html">Prices</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Main Content Section -->
@@ -151,12 +183,10 @@
             </ul>
         </p>
     </section>
-    
-    </section>
-    
+
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Sheeeda Launderette. All rights reserved.</p>
+        <p>&copy; 2025 Sheeeda Launderette. All rights reserved. | Designed with care.</p>
     </footer>
 </body>
 
